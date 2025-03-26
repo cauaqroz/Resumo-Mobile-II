@@ -6,10 +6,10 @@ O Android é uma pilha de softwares desenvolvida sobre o Kernel Linux, responsá
 - Kernel Linux
   - Responsável pelo gerenciamento de hardware.
 
-- Vantagens:
-  - Segurança: herda a robustez do Linux.
+  - Vantagens:
+    - Segurança: herda a robustez do Linux.
 
-  - Facilidade no desenvolvimento de drivers: sistema bem documentado e testado.
+    - Facilidade no desenvolvimento de drivers: sistema bem documentado e testado.
 
 - Hardware Abstraction Layer (HAL)
   - Fornece interfaces padrão para acesso ao hardware.
