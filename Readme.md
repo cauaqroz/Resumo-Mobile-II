@@ -296,17 +296,39 @@ As imagens são adicionadas ao diretório res/drawable.
 Uma Activity é uma tela de interface do usuário em um aplicativo Android.
 - É composta por uma classe Java/Kotlin (ex: MainActivity) e um arquivo XML (layout).
 - Ciclo de Vida de uma Activity:
-- A Activity passa por diferentes estados durante sua execução.
-### Os principais estados e métodos são:
-- onCreate(): Chamado quando a Activity é criada. Usado para inicialização.
-- onStart(): A Activity se torna visível.
-- onResume(): A Activity está em primeiro plano e interativa.
-- onPause(): A Activity perde o foco (outra Activity está iniciando).
-- onStop(): A Activity não está mais visível.
-- onRestart(): A Activity é reiniciada após ser parcialmente oculta.
-- onDestroy(): A Activity é destruída.
-### Pilha de Activities:
-- As Activities são organizadas em uma pilha.
-- A nova Activity iniciada é colocada no topo da pilha.
+- O ciclo de vida de uma Activity define os estados pelos quais ela passa enquanto o usuário interage com o aplicativo.
+- A classe Activity fornece callbacks que permitem gerenciar transições entre estados.
 
+### Os principais estados e métodos são:
+- onCreate():
+  - Chamado ao criar a Activity.
+  - Usado para inicializar componentes e configurar a interface (ex.: setContentView()).
+  - Recebe o Bundle para restaurar estados salvos.
+
+- onStart():
+
+  - A Activity se torna visível para o usuário.
+  - Preparação para entrar em primeiro plano.
+- onResume():
+
+  - A Activity está em primeiro plano e interativa.
+  - Ideal para inicializar recursos que precisam estar ativos enquanto a Activity está visível.
+- onPause():
+
+  - Chamado quando a Activity perde o foco (ex.: outra Activity é iniciada).
+  - Use para pausar operações que não precisam continuar em segundo plano.
+- onStop():
+  - A Activity não está mais visível.
+  - Libere recursos pesados ou salve dados persistentes.
+- onRestart():
+
+  - Chamado quando a Activity é reiniciada após ser interrompida.
+- onDestroy():
+  - Chamado antes da Activity ser destruída.
+Use para liberar recursos finais.
+
+### Pilha de Activities:
+- As Activities são organizadas em uma pilha (stack).
+- A nova Activity iniciada é colocada no topo da pilha.
+- Ao pressionar "Voltar", a Activity no topo é removida.
 
