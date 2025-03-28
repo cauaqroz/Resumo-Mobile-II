@@ -290,7 +290,7 @@ As imagens são adicionadas ao diretório res/drawable.
     android:src="@drawable/figura_saopaulo"
     android:scaleType="centerCrop"/>
 ```
-## Activity e Ciclo de Vida - Ver1.pdf
+## Activity e Ciclo de Vida
 
 - Activity:
 Uma Activity é uma tela de interface do usuário em um aplicativo Android.
@@ -308,3 +308,5 @@ Uma Activity é uma tela de interface do usuário em um aplicativo Android.
 ### Pilha de Activities:
 - As Activities são organizadas em uma pilha.
 - A nova Activity iniciada é colocada no topo da pilha.
+
+
