@@ -91,13 +91,54 @@ app:layout_constraintBottom_toBottomOf="parent"
     > `EditText` para valor da conta.
     > `Button` para calcular.
     > Lógica no `onClick`
+
      ```Xml
+        <EditText
+        android:id="@+id/etBillAmount
+        android:hint="Enter bill amount"
+        android:inputType="numberDecimal"/>
 
+        <Button
+        android:id="@+id/btnCalculate"
+        android:text="Calculate 10% Tip"/>
 
+        <TextView
+        android:id="@+id/tvTipResult"/>
     ```
-    ```java  
-   float valor = Float.parseFloat(editText.getText().toString());  
-   float gorjeta = valor * 0.1; // 10%  
+    ```java 
+    class MainActivity : AppCompatActivity() {
+        private TextView result;
+        private Button btnCal;
+        private EditText valor;
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize views
+        etBillAmount = findViewById(R.id.etBillAmount)
+        btnCalculate = findViewById(R.id.btnCalculate)
+        tvTipResult = findViewById(R.id.tvTipResult)
+
+        // Set onClick listener with arrow function
+        btnCalculate.setOnClickListener {
+            calculateTip()
+        }
+    }
+
+    private fun calculateTip() {
+        val billAmountText = etBillAmount.text.toString()
+        
+        if (billAmountText.isNotEmpty()) {
+            val billAmount = billAmountText.toFloat()
+            val tipAmount = billAmount * 0.1f  // 10% tip
+            
+            tvTipResult.text = "Tip amount: $${"%.2f".format(tipAmount)}"
+        } else {
+            tvTipResult.text = "Please enter a bill amount"
+            }
+        }
+    }
    ```
 2. Como passar dados entre Activities usando Intent? Demonstre com um exemplo.
 - Enviar:  
